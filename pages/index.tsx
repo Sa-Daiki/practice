@@ -21,5 +21,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
   //   console.log(_);
   //   return { props: { _ } };
   // }
-  return { props: { API_KEY } };
+  const props = { api: "a", abi: API_KEY };
+  return { props: { props } };
 };
