@@ -1,11 +1,18 @@
 import { GetServerSideProps, GetStaticProps } from "next";
-import { backendApiClient } from "../ky";
+import { backendApiClient, frontendApiClient } from "../ky";
 
 const API_KEY = process.env.RESAS_API_KEY as string;
 
 const Index = (props: any) => {
   console.log(props);
-  return <div>Enter</div>;
+
+  const onClick = async () => {
+    const response = await frontendApiClient.get("hello");
+    const json = await response.json();
+    console.log(json);
+  };
+
+  return <button onClick={onClick}>button</button>;
 };
 
 export default Index;
