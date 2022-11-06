@@ -11,14 +11,15 @@ const Index = (props: any) => {
 export default Index;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  try {
-    const data = await backendApiClient.get("prefectures", {
-      headers: { "X-API-KEY": API_KEY },
-    });
-    const json = await data.json();
-    return { props: { json } };
-  } catch (_) {
-    console.log(_);
-    return { props: { _ } };
-  }
+  // try {
+  //   const data = await backendApiClient.get("prefectures", {
+  //     headers: { "X-API-KEY": API_KEY },
+  //   });
+  //   const json = await data.json();
+  //   return { props: { json } };
+  // } catch (_) {
+  //   console.log(_);
+  //   return { props: { _ } };
+  // }
+  return { props: { API_KEY } };
 };
