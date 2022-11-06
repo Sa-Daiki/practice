@@ -16,7 +16,7 @@ export default async function handler(
     const response = await backendApiClient.get("prefectures", {
       headers: { "X-API-KEY": API_KEY },
     });
-    const json = await response.json();
+    const json: any = await response.json();
     res.status(200).json(json);
   } catch (error) {
     res.status(500).end();
