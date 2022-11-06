@@ -18,6 +18,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     const json = await data.json();
     return { props: { json } };
   } catch (_) {
+    console.log(_);
     return { props: { _ } };
   }
 };
